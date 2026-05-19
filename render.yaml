@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: auron-search-bot
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPO
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        value: 8705540280:AAE-BuiH4biFKdgE8loJpFiTAcYBXw7hydw
+      - key: DATABASE_URL
+        value: postgresql://auron_db_user:vqXMcb9SQ3k6JCX3Dj00DttbhorYm3fq@dpg-d81h5n7lk1mc73adicbg-a/auron_db
+      - key: ADMIN_ID
+        value: 8276815852
+      - key: BOT_USERNAME
+        value: Auronsearchesbot
+      - key: PORT
+        value: 8080
+      - key: FREE_LIMIT
+        value: 10
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
